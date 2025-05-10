@@ -1,0 +1,188 @@
+[gd_scene load_steps=16 format=3 uid="uid://cjk28d5sqb71l"]
+
+[ext_resource type="Script" path="res://scripts/websocket.gd" id="1_m7je1"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="2_1ggbh"]
+[ext_resource type="PackedScene" uid="uid://sc5w68qfnbro" path="res://scenes/header.tscn" id="3_ufpl7"]
+[ext_resource type="PackedScene" uid="uid://cdb54u4elha2q" path="res://scenes/sounds_container.tscn" id="4_edq7l"]
+[ext_resource type="Script" path="res://scripts/context_menu.gd" id="5_6qvsi"]
+[ext_resource type="Texture2D" uid="uid://dqqe0iypgrr24" path="res://icons/pen.svg" id="5_yvicd"]
+[ext_resource type="Texture2D" uid="uid://cmy3ylaxkbd7o" path="res://icons/trash.svg" id="6_1y4rr"]
+[ext_resource type="PackedScene" uid="uid://di3lp56g6bapw" path="res://scenes/modal.tscn" id="8_46x7c"]
+[ext_resource type="Script" path="res://scripts/loading_screen.gd" id="9_8rwhl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2udoi"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxnow"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3xjw"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.133196, 0.133196, 0.133196, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf4fk"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxxsg"]
+bg_color = Color(0.247059, 0.247059, 0.27451, 1)
+draw_center = false
+border_width_top = 1
+border_color = Color(0.247059, 0.247059, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0ywy"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Controller" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_m7je1")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1ggbh")
+
+[node name="Panel" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2udoi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" parent="UI/Panel/VBoxContainer" instance=ExtResource("3_ufpl7")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+
+[node name="HSeparator" type="HSeparator" parent="UI/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xxnow")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Panel/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 10
+
+[node name="SoundsContainer" parent="UI/Panel/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer" instance=ExtResource("4_edq7l")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ContextMenu" type="PopupMenu" parent="UI"]
+unique_name_in_owner = true
+transparent_bg = true
+size = Vector2i(115, 99)
+transparent = true
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+theme_override_constants/outline_size = 0
+theme_override_constants/separator_outline_size = 0
+theme_override_constants/item_start_padding = 8
+theme_override_constants/item_end_padding = 16
+theme_override_constants/icon_max_width = 16
+theme_override_styles/panel = SubResource("StyleBoxFlat_b3xjw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nf4fk")
+theme_override_styles/separator = SubResource("StyleBoxFlat_wxxsg")
+allow_search = false
+item_count = 3
+item_0/text = "Edit"
+item_0/icon = ExtResource("5_yvicd")
+item_0/id = 0
+item_1/id = 2
+item_1/separator = true
+item_2/text = "Delete"
+item_2/icon = ExtResource("6_1y4rr")
+item_2/id = 1
+script = ExtResource("5_6qvsi")
+
+[node name="Modal" parent="UI" instance=ExtResource("8_46x7c")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="LoadingScreen" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e0ywy")
+script = ExtResource("9_8rwhl")
+
+[node name="DotTimer" type="Timer" parent="UI/LoadingScreen"]
+wait_time = 0.5
+autostart = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LoadingScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/LoadingScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 28
+text = "Loading"
+
+[node name="Dots" type="Label" parent="UI/LoadingScreen/VBoxContainer"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[connection signal="event_received" from="Controller" to="UI" method="_on_controller_event_received"]
+[connection signal="loading_progress" from="Controller" to="UI/LoadingScreen" method="_on_controller_loading_progress"]
+[connection signal="loading_done" from="UI" to="UI/LoadingScreen" method="_on_ui_loading_done"]
+[connection signal="id_pressed" from="UI/ContextMenu" to="UI/ContextMenu" method="_on_id_pressed"]
+[connection signal="timeout" from="UI/LoadingScreen/DotTimer" to="UI/LoadingScreen" method="_on_dot_timer_timeout"]

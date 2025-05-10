@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdb54u4elha2q"]
+
+[ext_resource type="PackedScene" uid="uid://dix4bxxaryu1x" path="res://scenes/add_sound_button.tscn" id="1_ronaa"]
+
+[node name="FlowContainer" type="FlowContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+
+[node name="AddSoundButton" parent="." instance=ExtResource("1_ronaa")]
+unique_name_in_owner = true
+layout_mode = 2

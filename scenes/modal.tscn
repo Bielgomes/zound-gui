@@ -1,0 +1,338 @@
+[gd_scene load_steps=15 format=3 uid="uid://di3lp56g6bapw"]
+
+[ext_resource type="Script" path="res://scripts/modal.gd" id="1_4avgr"]
+[ext_resource type="Texture2D" uid="uid://dru5fg4yltsy" path="res://icons/square-arrow-out-up-right.svg" id="2_rcsa0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt40h"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5itho"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0y4cj"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.560784, 0.560784, 0.560784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tntkg"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.560784, 0.560784, 0.560784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6ag1"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1335, 0.1335, 0.15, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kat5"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.133333, 0.133333, 0.14902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gow7"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.152941, 0.152941, 0.164706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuqwg"]
+bg_color = Color(0.1335, 0.1335, 0.15, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u67mq"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.152941, 0.152941, 0.164706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpmtr"]
+bg_color = Color(0.25098, 0.760784, 0.439216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nni3o"]
+bg_color = Color(0.25098, 0.760784, 0.439216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfsyv"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.290196, 0.870588, 0.501961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Modal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4avgr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.658824)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 150
+
+[node name="Body" type="Panel" parent="MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(700, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_vt40h")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Header" type="Label" parent="MarginContainer/Body/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Edit Sound"
+
+[node name="Fields" type="VBoxContainer" parent="MarginContainer/Body/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Name" type="VBoxContainer" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields"]
+custom_minimum_size = Vector2(0, 95)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Name"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.56, 0.56, 1)
+text = "Name *"
+
+[node name="Input" type="LineEdit" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Name"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+focus_next = NodePath("../../Path/HBoxContainer/Input")
+focus_previous = NodePath("../../../Footer/Confirm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5itho")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0y4cj")
+max_length = 255
+
+[node name="ErrorLabel" type="Label" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Name"]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.1792, 0.1792, 1)
+
+[node name="Path" type="VBoxContainer" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields"]
+custom_minimum_size = Vector2(0, 95)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Path"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.56, 0.56, 1)
+text = "Path *"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Path"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Input" type="LineEdit" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Path/HBoxContainer"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_next = NodePath("../SelectFile")
+focus_previous = NodePath("../../../Name/Input")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5itho")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_tntkg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0y4cj")
+max_length = 255
+
+[node name="SelectFile" type="Button" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Path/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+tooltip_text = "Select sound"
+focus_next = NodePath("../../../../Footer/Cancel")
+focus_previous = NodePath("../Input")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/icon_max_width = 18
+theme_override_icons/icon = ExtResource("2_rcsa0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g6ag1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5kat5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gow7")
+
+[node name="ErrorLabel" type="Label" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Path"]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.56, 0.1792, 0.1792, 1)
+
+[node name="Footer" type="HBoxContainer" parent="MarginContainer/Body/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Cancel" type="Button" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Footer"]
+layout_mode = 2
+size_flags_horizontal = 2
+focus_next = NodePath("../Confirm")
+focus_previous = NodePath("../../Fields/Path/HBoxContainer/SelectFile")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_cuqwg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u67mq")
+text = "Cancel"
+
+[node name="Confirm" type="Button" parent="MarginContainer/Body/MarginContainer/VBoxContainer/Footer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_next = NodePath("../../Fields/Name/Input")
+focus_previous = NodePath("../Cancel")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_fpmtr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nni3o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfsyv")
+text = "Confirm"
+
+[node name="AudioSelect" type="FileDialog" parent="."]
+auto_translate_mode = 1
+title = "Select sound"
+position = Vector2i(0, 36)
+size = Vector2i(322, 180)
+wrap_controls = false
+transient = false
+exclusive = false
+ok_button_text = "Select"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.wav,*.mp3")
+use_native_dialog = true
+
+[connection signal="text_changed" from="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Name/Input" to="." method="_on_name_field_text_changed"]
+[connection signal="text_changed" from="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Path/HBoxContainer/Input" to="." method="_on_input_text_changed"]
+[connection signal="pressed" from="MarginContainer/Body/MarginContainer/VBoxContainer/Fields/Path/HBoxContainer/SelectFile" to="." method="_on_select_file_pressed"]
+[connection signal="pressed" from="MarginContainer/Body/MarginContainer/VBoxContainer/Footer/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="MarginContainer/Body/MarginContainer/VBoxContainer/Footer/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="canceled" from="AudioSelect" to="." method="_on_audio_select_canceled"]
+[connection signal="file_selected" from="AudioSelect" to="." method="_on_audio_select_file_selected"]

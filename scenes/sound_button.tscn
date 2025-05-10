@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddvlfjetp4ema"]
+
+[ext_resource type="Script" path="res://scripts/sound_button.gd" id="1_0v2yp"]
+[ext_resource type="Texture2D" uid="uid://d24q1bgaotqms" path="res://icons/file-warning.png" id="2_53h1n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8kaq"]
+bg_color = Color(0.152941, 0.152941, 0.164706, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 20
+border_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufiea"]
+content_margin_left = 0.0
+content_margin_top = 1.0
+content_margin_right = 0.0
+content_margin_bottom = 1.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8hql"]
+draw_center = false
+
+[node name="SoundButton" type="Control"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 3
+script = ExtResource("1_0v2yp")
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w8kaq")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Panel/MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 3
+
+[node name="IsInvalid" type="Button" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -35.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 39.8718
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+tooltip_text = "File not found"
+focus_mode = 0
+theme_override_constants/icon_max_width = 20
+theme_override_icons/icon = ExtResource("2_53h1n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ufiea")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q8hql")
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]

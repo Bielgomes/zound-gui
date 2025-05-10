@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://dix4bxxaryu1x"]
+
+[ext_resource type="Script" path="res://scripts/add_sound_button.gd" id="1_7c7pt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ejhb"]
+bg_color = Color(0.152941, 0.152941, 0.164706, 1)
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="AddSoundButton" type="Control"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 150.0
+script = ExtResource("1_7c7pt")
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Add Sound"
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ejhb")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.247059, 0.247059, 0.27451, 1)
+theme_override_font_sizes/font_size = 55
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="AudioSelect" type="FileDialog" parent="."]
+title = "Select sound(s)"
+position = Vector2i(0, 36)
+size = Vector2i(322, 180)
+wrap_controls = false
+transient = false
+exclusive = false
+ok_button_text = "Select"
+file_mode = 1
+access = 2
+filters = PackedStringArray("*.wav,*.mp3")
+use_native_dialog = true
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]
+[connection signal="canceled" from="AudioSelect" to="." method="_on_audio_select_canceled"]
+[connection signal="close_requested" from="AudioSelect" to="." method="_on_audio_select_close_requested"]
+[connection signal="files_selected" from="AudioSelect" to="." method="_on_audio_select_files_selected"]

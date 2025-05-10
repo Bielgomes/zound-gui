@@ -1,0 +1,211 @@
+[gd_scene load_steps=13 format=3 uid="uid://sc5w68qfnbro"]
+
+[ext_resource type="Script" path="res://scripts/header.gd" id="1_3demd"]
+[ext_resource type="Texture2D" uid="uid://bdtc53ag2aiex" path="res://icons/headphones.svg" id="2_ev0d5"]
+[ext_resource type="Script" path="res://scripts/mute_button.gd" id="3_0g6pd"]
+[ext_resource type="Texture2D" uid="uid://drkn75nb32ljr" path="res://icons/circle-stop.svg" id="4_2gkgx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agi0e"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.254902)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h28f8"]
+bg_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_040c3"]
+bg_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2teaj"]
+bg_color = Color(0.247059, 0.247059, 0.27451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x16in"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.152941, 0.152941, 0.164706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdcqm"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.152941, 0.152941, 0.164706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7lb3"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.138923, 0.13885, 0.154888, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fner3"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+draw_center = false
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_agi0e")
+script = ExtResource("1_3demd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 125
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="FlowContainer" type="FlowContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/h_separation = 50
+
+[node name="HeadphoneVolume" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FlowContainer/HeadphoneVolume"]
+layout_mode = 2
+text = "Headphone Volume"
+
+[node name="HeadphoneVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/FlowContainer/HeadphoneVolume"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_next = NodePath("../../MicrophoneVolume/MicrophoneVolumeSlider")
+focus_previous = NodePath("../../../Actions/StopButton")
+theme_override_styles/slider = SubResource("StyleBoxFlat_h28f8")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_040c3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_2teaj")
+value = 100.0
+
+[node name="Volume" type="Label" parent="MarginContainer/VBoxContainer/FlowContainer/HeadphoneVolume"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "0%"
+
+[node name="MicrophoneVolume" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FlowContainer/MicrophoneVolume"]
+layout_mode = 2
+text = "Microphone Volume"
+
+[node name="MicrophoneVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/FlowContainer/MicrophoneVolume"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_next = NodePath("../../../Actions/MuteButton")
+focus_previous = NodePath("../../HeadphoneVolume/HeadphoneVolumeSlider")
+theme_override_styles/slider = SubResource("StyleBoxFlat_h28f8")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_040c3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_2teaj")
+value = 100.0
+
+[node name="Volume" type="Label" parent="MarginContainer/VBoxContainer/FlowContainer/MicrophoneVolume"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "0%"
+
+[node name="Actions" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MuteButton" type="Button" parent="MarginContainer/VBoxContainer/Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Mute / Unmute headphone input"
+focus_next = NodePath("../StopButton")
+focus_previous = NodePath("../../FlowContainer/MicrophoneVolume/MicrophoneVolumeSlider")
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_x16in")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdcqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r7lb3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fner3")
+icon = ExtResource("2_ev0d5")
+icon_alignment = 1
+script = ExtResource("3_0g6pd")
+
+[node name="StopButton" type="Button" parent="MarginContainer/VBoxContainer/Actions"]
+layout_mode = 2
+tooltip_text = "Stop"
+focus_next = NodePath("../../FlowContainer/HeadphoneVolume/HeadphoneVolumeSlider")
+focus_previous = NodePath("../MuteButton")
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_x16in")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdcqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r7lb3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fner3")
+icon = ExtResource("4_2gkgx")
+icon_alignment = 1
+
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/FlowContainer/HeadphoneVolume/HeadphoneVolumeSlider" to="." method="_on_input_slider_drag_ended"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/FlowContainer/HeadphoneVolume/HeadphoneVolumeSlider" to="." method="_on_input_slider_value_changed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/FlowContainer/MicrophoneVolume/MicrophoneVolumeSlider" to="." method="_on_output_slider_drag_ended"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/FlowContainer/MicrophoneVolume/MicrophoneVolumeSlider" to="." method="_on_output_slider_value_changed"]
+[connection signal="on_mute_change" from="MarginContainer/VBoxContainer/Actions/MuteButton" to="." method="_on_mute_button_on_mute_change"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Actions/MuteButton" to="MarginContainer/VBoxContainer/Actions/MuteButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Actions/StopButton" to="." method="_on_stop_button_pressed"]
