@@ -19,6 +19,8 @@
 > [!WARNING]
 > Zound/Zound-GUI depends on [Voicemeeter](https://vb-audio.com/Voicemeeter/) being installed, configured, and running properly. Follow this [Tutorial](https://www.youtube.com/watch?v=8ymkY6Ppyzo) for basic setup instructions!
 
+Download any Zound-GUI version in [Releases](https://github.com/Bielgomes/zound-gui/releases)
+
 ## Contributors
 <a href="https://github.com/Bielgomes/zound-gui/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Bielgomes/zound-gui" />
