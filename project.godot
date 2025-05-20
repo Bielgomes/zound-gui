@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Zound"
+config/name="zound"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/windows_native_icon="res://icons/icon.ico"
