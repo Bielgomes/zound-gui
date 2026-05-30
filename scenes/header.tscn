@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://sc5w68qfnbro"]
 
-[ext_resource type="Script" path="res://scripts/header.gd" id="1_3demd"]
+[ext_resource type="Script" uid="uid://departwsihyr1" path="res://scripts/header.gd" id="1_3demd"]
 [ext_resource type="Texture2D" uid="uid://bdtc53ag2aiex" path="res://icons/headphones.svg" id="2_ev0d5"]
-[ext_resource type="Script" path="res://scripts/mute_button.gd" id="3_0g6pd"]
+[ext_resource type="Script" uid="uid://bxxwlqydli40l" path="res://scripts/mute_button.gd" id="3_0g6pd"]
 [ext_resource type="Texture2D" uid="uid://drkn75nb32ljr" path="res://icons/circle-stop.svg" id="4_2gkgx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agi0e"]
@@ -39,23 +39,12 @@ corner_radius_bottom_left = 4
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x16in"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fner3"]
 content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-bg_color = Color(0.152941, 0.152941, 0.164706, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdcqm"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(0.152941, 0.152941, 0.164706, 1)
+draw_center = false
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -72,12 +61,23 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fner3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdcqm"]
 content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-draw_center = false
+bg_color = Color(0.152941, 0.152941, 0.164706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x16in"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.152941, 0.152941, 0.164706, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -104,7 +104,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 125
+theme_override_constants/margin_right = 50
 
 [node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -181,10 +181,10 @@ tooltip_text = "Mute / Unmute headphone input"
 focus_next = NodePath("../StopButton")
 focus_previous = NodePath("../../FlowContainer/MicrophoneVolume/MicrophoneVolumeSlider")
 mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_x16in")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hdcqm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_r7lb3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fner3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r7lb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdcqm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x16in")
 icon = ExtResource("2_ev0d5")
 icon_alignment = 1
 script = ExtResource("3_0g6pd")
@@ -195,10 +195,10 @@ tooltip_text = "Stop"
 focus_next = NodePath("../../FlowContainer/HeadphoneVolume/HeadphoneVolumeSlider")
 focus_previous = NodePath("../MuteButton")
 mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_x16in")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hdcqm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_r7lb3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fner3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r7lb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdcqm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x16in")
 icon = ExtResource("4_2gkgx")
 icon_alignment = 1
 

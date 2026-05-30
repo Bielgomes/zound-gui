@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://cjk28d5sqb71l"]
 
-[ext_resource type="Script" path="res://scripts/websocket.gd" id="1_m7je1"]
-[ext_resource type="Script" path="res://scripts/ui.gd" id="2_1ggbh"]
+[ext_resource type="Script" uid="uid://rm3eveakuf17" path="res://scripts/websocket.gd" id="1_m7je1"]
+[ext_resource type="Script" uid="uid://cwkrupcjbohe7" path="res://scripts/ui.gd" id="2_1ggbh"]
 [ext_resource type="PackedScene" uid="uid://sc5w68qfnbro" path="res://scenes/header.tscn" id="3_ufpl7"]
 [ext_resource type="PackedScene" uid="uid://cdb54u4elha2q" path="res://scenes/sounds_container.tscn" id="4_edq7l"]
-[ext_resource type="Script" path="res://scripts/context_menu.gd" id="5_6qvsi"]
+[ext_resource type="Script" uid="uid://c2qqu1xse4dkg" path="res://scripts/context_menu.gd" id="5_6qvsi"]
 [ext_resource type="Texture2D" uid="uid://dqqe0iypgrr24" path="res://icons/pen.svg" id="5_yvicd"]
 [ext_resource type="Texture2D" uid="uid://cmy3ylaxkbd7o" path="res://icons/trash.svg" id="6_1y4rr"]
 [ext_resource type="PackedScene" uid="uid://di3lp56g6bapw" path="res://scenes/modal.tscn" id="8_46x7c"]
-[ext_resource type="Script" path="res://scripts/loading_screen.gd" id="9_8rwhl"]
+[ext_resource type="Script" uid="uid://db65qj2fl31wm" path="res://scripts/loading_screen.gd" id="9_8rwhl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2udoi"]
 bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
@@ -114,9 +114,7 @@ layout_mode = 2
 
 [node name="ContextMenu" type="PopupMenu" parent="UI"]
 unique_name_in_owner = true
-transparent_bg = true
 size = Vector2i(115, 99)
-transparent = true
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 theme_override_constants/outline_size = 0
@@ -145,6 +143,7 @@ visible = false
 layout_mode = 1
 
 [node name="LoadingScreen" type="Panel" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
