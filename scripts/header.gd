@@ -22,8 +22,8 @@ func init_config(config: Variant):
 	headphone_volume_slider.value = headphone_volume * 100
 	microphone_volume_slider.value = microphone_volume * 100
 
-	headphone_volume_label.text = str(headphone_volume_slider.value) + "%"
-	microphone_volume_label.text = str(microphone_volume_slider.value) + "%"
+	headphone_volume_label.text = str(int(headphone_volume_slider.value)) + "%"
+	microphone_volume_label.text = str(int(microphone_volume_slider.value)) + "%"
 
 
 func _on_output_slider_drag_ended(value_changed: bool) -> void:
@@ -33,7 +33,7 @@ func _on_output_slider_drag_ended(value_changed: bool) -> void:
 
 
 func _on_output_slider_value_changed(value: float) -> void:
-	microphone_volume_label.text = str(value) + "%"
+	microphone_volume_label.text = str(int(value)) + "%"
 
 
 func _on_input_slider_drag_ended(value_changed: bool) -> void:
@@ -43,7 +43,7 @@ func _on_input_slider_drag_ended(value_changed: bool) -> void:
 
 
 func _on_input_slider_value_changed(value: float) -> void:
-	headphone_volume_label.text = str(value) + "%"
+	headphone_volume_label.text = str(int(value)) + "%"
 
 
 func _on_mute_button_on_mute_change() -> void:
