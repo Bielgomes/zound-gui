@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://sc5w68qfnbro"]
+[gd_scene load_steps=14 format=3 uid="uid://sc5w68qfnbro"]
 
 [ext_resource type="Script" uid="uid://departwsihyr1" path="res://scripts/header.gd" id="1_3demd"]
 [ext_resource type="Texture2D" uid="uid://bdtc53ag2aiex" path="res://icons/headphones.svg" id="2_ev0d5"]
 [ext_resource type="Script" uid="uid://bxxwlqydli40l" path="res://scripts/mute_button.gd" id="3_0g6pd"]
+[ext_resource type="Texture2D" uid="uid://cl3bofc4um6re" path="res://icons/mic.svg" id="3_qhj4n"]
 [ext_resource type="Texture2D" uid="uid://drkn75nb32ljr" path="res://icons/circle-stop.svg" id="4_2gkgx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agi0e"]
@@ -122,10 +123,12 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FlowContainer/HeadphoneVolume"]
+[node name="HeadphoneIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/FlowContainer/HeadphoneVolume"]
 layout_mode = 2
-text = "Headphone Volume"
+texture = ExtResource("2_ev0d5")
+expand_mode = 2
 
 [node name="HeadphoneVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/FlowContainer/HeadphoneVolume"]
 custom_minimum_size = Vector2(80, 0)
@@ -149,10 +152,12 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FlowContainer/MicrophoneVolume"]
+[node name="MicrophoneIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/FlowContainer/MicrophoneVolume"]
 layout_mode = 2
-text = "Microphone Volume"
+texture = ExtResource("3_qhj4n")
+expand_mode = 2
 
 [node name="MicrophoneVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/FlowContainer/MicrophoneVolume"]
 custom_minimum_size = Vector2(80, 0)

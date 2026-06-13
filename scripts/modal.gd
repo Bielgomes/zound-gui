@@ -48,19 +48,9 @@ func on_form_state_change():
 	confirm_button.focus_mode = 0 if there_is_an_error else 2
 
 
-func _input(_event: InputEvent) -> void:
-	pass
-
-	#if not visible:
-		#return
-
-	#if event.is_action_released("Escape"):
-		#close()
-
-
 func _on_name_field_text_changed(name_: String) -> void:
-	if len(name_) < 3 or len(name_) > 255:
-		name_error_label.text = "The name must have 3 or more characters"
+	if len(name_) < 1 or len(name_) > 255:
+		name_error_label.text = "The name must have 1 or more characters"
 		there_is_an_error = true
 		on_form_state_change()
 		return
@@ -72,19 +62,19 @@ func _on_name_field_text_changed(name_: String) -> void:
 
 func _on_input_text_changed(path: String) -> void:
 	if not path.is_absolute_path():
-		path_error_label.text = "This path is not valid"
+		path_error_label.text = "Path must be absolute (e.g. C:/)"
 		there_is_an_error = true
 		on_form_state_change()
 		return
 
 	if path.get_extension() not in ["mp3", "wav"]:
-		path_error_label.text = "Invalid sound type"
+		path_error_label.text = "Unsupported format. Only .mp3 and .wav are allowed"
 		there_is_an_error = true
 		on_form_state_change()
 		return
 
 	if not FileAccess.file_exists(path):
-		path_error_label.text = "Sound not found in this path"
+		path_error_label.text = "File does not exist at the specified path"
 		there_is_an_error = true
 		on_form_state_change()
 		return
@@ -121,7 +111,7 @@ func _on_confirm_pressed() -> void:
 			"type": Constants.OutgoingEvent["SOUND_UPDATE"],
 			"data": {
 				id = sound_data.id,
-				name = name_input.text,
+				name = name_input.text.strip_edges(),
 				path = path_input.text
 			}
 		}))

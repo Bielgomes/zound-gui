@@ -65,7 +65,7 @@ func _on_audio_select_canceled() -> void:
 
 func _on_audio_select_files_selected(paths: PackedStringArray) -> void:
 	for path in paths:
-		name = path.split("\\")[-1].split(".")[0]
+		name = path.split("/")[-1].split(".")[0]
 		name = name.replace("-", " ").replace("_", " ")
 
 		controller.send_event(JSON.stringify({

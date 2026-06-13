@@ -25,10 +25,10 @@ func _ready() -> void:
 
 
 func _setup_n_start(path):
-	call_deferred("emit_signal", "loading_progress", Constants.LoadingEvents.Setup)
+	loading_progress.emit(Constants.LoadingEvents.Setup)
 	OS.execute(path.path_join("setup.bat"), [])
 
-	call_deferred("emit_signal", "loading_progress", Constants.LoadingEvents.Start)
+	loading_progress.emit(Constants.LoadingEvents.Start)
 	OS.create_process(path.path_join("run.bat"), [])
 
 	websocket.connect_to_url("ws://localhost:4358")
@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 	match state:
 		WebSocketPeer.STATE_OPEN:
 			if initial_fetch:
-				call_deferred("emit_signal", "loading_progress", Constants.LoadingEvents.FetchInitialInformation)
+				loading_progress.emit(Constants.LoadingEvents.FetchInitialInformation)
 				websocket.send_text(JSON.stringify({
 					"type": Constants.OutgoingEvent["CONFIG_FETCH"]
 				}))

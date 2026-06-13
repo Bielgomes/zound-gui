@@ -16,7 +16,6 @@ func search_sound(id: int):
 
 	return null
 
-
 func _on_controller_event_received(event: Variant) -> void:
 	match event.type:
 		"CONFIG:FETCHED":
@@ -77,3 +76,17 @@ func _on_controller_event_received(event: Variant) -> void:
 			var stopped_sound = search_sound(event.soundId)
 			if stopped_sound:
 				stopped_sound.stop_playing()
+
+
+func _on_input_text_changed(search: String) -> void:
+	var seach_string = search.to_lower().strip_edges()
+	var found_sounds = sounds_container.get_children().filter(func(sound): return sound.sound_data)
+
+	if seach_string == "":
+		for sound in found_sounds:
+			sound.visible = true
+		return
+
+	for sound in found_sounds:
+		var sound_data = sound.sound_data
+		sound.visible = search.to_lower() in sound_data.name.to_lower()

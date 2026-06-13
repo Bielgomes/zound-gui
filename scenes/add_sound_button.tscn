@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dix4bxxaryu1x"]
 
-[ext_resource type="Script" path="res://scripts/add_sound_button.gd" id="1_7c7pt"]
+[ext_resource type="Script" uid="uid://vulixywcmrui" path="res://scripts/add_sound_button.gd" id="1_7c7pt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ejhb"]
 bg_color = Color(0.152941, 0.152941, 0.164706, 1)
@@ -58,9 +58,10 @@ vertical_alignment = 1
 text_overrun_behavior = 2
 
 [node name="AudioSelect" type="FileDialog" parent="."]
-title = "Select sound(s)"
+oversampling_override = 1.0
+title = "Open File(s)"
 position = Vector2i(0, 36)
-size = Vector2i(322, 180)
+size = Vector2i(348, 180)
 wrap_controls = false
 transient = false
 exclusive = false
