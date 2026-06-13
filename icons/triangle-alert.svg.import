@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pp8skydmfbl0"
-path="res://.godot/imported/file-exclamation-point.svg-b6b232238e4440d2514ac0a6dbe2b7c9.ctex"
+uid="uid://c5mqc8rw1xbc4"
+path="res://.godot/imported/triangle-alert.svg-20a174115f55d204062310019011a547.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/file-exclamation-point.svg"
-dest_files=["res://.godot/imported/file-exclamation-point.svg-b6b232238e4440d2514ac0a6dbe2b7c9.ctex"]
+source_file="res://icons/triangle-alert.svg"
+dest_files=["res://.godot/imported/triangle-alert.svg-20a174115f55d204062310019011a547.ctex"]
 
 [params]
 

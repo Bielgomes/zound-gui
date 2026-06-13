@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddvlfjetp4ema"]
 
 [ext_resource type="Script" uid="uid://bqvokuaichxif" path="res://scripts/sound_button.gd" id="1_0v2yp"]
-[ext_resource type="Texture2D" uid="uid://pp8skydmfbl0" path="res://icons/file-exclamation-point.svg" id="2_c3hs1"]
+[ext_resource type="Texture2D" uid="uid://c5mqc8rw1xbc4" path="res://icons/triangle-alert.svg" id="2_c3hs1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8kaq"]
 bg_color = Color(0.152941, 0.152941, 0.164706, 1)
@@ -58,13 +58,19 @@ autowrap_mode = 3
 text_overrun_behavior = 3
 
 [node name="IsInvalid" type="TextureRect" parent="Panel"]
-visible = false
-layout_mode = 0
-offset_left = 111.0
-offset_top = 18.0
-offset_right = 131.0
-offset_bottom = 43.0
-tooltip_text = "Arquivo não encontrado"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 35.5
+offset_top = -60.5
+offset_right = 60.5
+offset_bottom = -35.5
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "File not found"
 texture = ExtResource("2_c3hs1")
 expand_mode = 2
 
