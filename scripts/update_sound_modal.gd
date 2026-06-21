@@ -11,13 +11,15 @@ extends Control
 
 @onready var audio_select := $AudioSelect
 
-var sound_data: SoundResource = SoundResource.new()
+var sound_data: SoundResource
+
 var there_is_an_error: bool = false
 var is_sound_select_open: bool = false
 
 
 func open(sound: SoundResource):
 	sound_data = sound
+
 	name_input.text = sound_data.name
 	path_input.text = sound_data.path
 

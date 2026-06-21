@@ -21,7 +21,7 @@ Constants="*res://globals/constants.gd"
 
 [display]
 
-window/size/viewport_width=1110
+window/size/viewport_width=1125
 window/size/viewport_height=700
 
 [gui]

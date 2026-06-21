@@ -26,7 +26,7 @@ var sound_data: SoundResource
 
 func update():
 	label.text = sound_data.name
-	panel.tooltip_text = "Tocar " + sound_data.name
+	panel.tooltip_text = "Play " + sound_data.name
 	is_invalid_button.visible = not sound_data.is_valid
 
 
@@ -37,7 +37,7 @@ func _ready() -> void:
 	panel.add_theme_stylebox_override("panel", stylebox)
 
 	label.text = sound_data.name
-	panel.tooltip_text = "Tocar " + sound_data.name
+	panel.tooltip_text = "Play " + sound_data.name
 	is_invalid_button.visible = not sound_data.is_valid
 
 

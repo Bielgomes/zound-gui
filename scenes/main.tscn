@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjk28d5sqb71l"]
+[gd_scene load_steps=24 format=3 uid="uid://cjk28d5sqb71l"]
 
 [ext_resource type="Script" uid="uid://rm3eveakuf17" path="res://scripts/websocket.gd" id="1_m7je1"]
 [ext_resource type="Script" uid="uid://cwkrupcjbohe7" path="res://scripts/ui.gd" id="2_1ggbh"]
@@ -8,9 +8,11 @@
 [ext_resource type="Script" uid="uid://c2qqu1xse4dkg" path="res://scripts/context_menu.gd" id="5_6qvsi"]
 [ext_resource type="Texture2D" uid="uid://d2ditesqhjxfo" path="res://icons/pencil.svg" id="5_choun"]
 [ext_resource type="Texture2D" uid="uid://cmy3ylaxkbd7o" path="res://icons/trash.svg" id="6_1y4rr"]
-[ext_resource type="PackedScene" uid="uid://di3lp56g6bapw" path="res://scenes/modal.tscn" id="8_46x7c"]
+[ext_resource type="Texture2D" uid="uid://dxon8pfu3i3qq" path="res://icons/arrow-big-down-dash.svg" id="7_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://di3lp56g6bapw" path="res://scenes/update_sound_modal.tscn" id="8_46x7c"]
 [ext_resource type="Script" uid="uid://db65qj2fl31wm" path="res://scripts/loading_screen.gd" id="9_8rwhl"]
 [ext_resource type="Texture2D" uid="uid://d3rg33hi2c6ys" path="res://icons/loader-circle.svg" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://bag1od3p6xmml" path="res://scenes/update_hotkey_modal.tscn" id="11_trceg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2udoi"]
 bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
@@ -86,6 +88,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("2_1ggbh")
 
 [node name="Panel" type="Panel" parent="UI"]
@@ -191,18 +195,26 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_b3xjw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nf4fk")
 theme_override_styles/separator = SubResource("StyleBoxFlat_wxxsg")
 allow_search = false
-item_count = 3
+item_count = 4
 item_0/text = "Edit"
 item_0/icon = ExtResource("5_choun")
 item_0/id = 0
-item_1/id = 2
-item_1/separator = true
-item_2/text = "Delete"
-item_2/icon = ExtResource("6_1y4rr")
-item_2/id = 1
+item_1/text = "Set Hotkey"
+item_1/icon = ExtResource("7_eb6dy")
+item_1/id = 3
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Delete"
+item_3/icon = ExtResource("6_1y4rr")
+item_3/id = 1
 script = ExtResource("5_6qvsi")
 
-[node name="Modal" parent="UI" instance=ExtResource("8_46x7c")]
+[node name="UpdateSoundModal" parent="UI" instance=ExtResource("8_46x7c")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="UpdateHotkeyModal" parent="UI" instance=ExtResource("11_trceg")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1

@@ -9,7 +9,7 @@ signal loading_done()
 var sound_scene = preload("res://scenes/sound_button.tscn")
 
 
-func search_sound(id: int):
+func search_sound(id: String):
 	var found_sounds = sounds_container.get_children().filter(func(sound): return sound.sound_data and sound.sound_data.id == id)
 	if found_sounds:
 		return found_sounds[0]
@@ -28,6 +28,7 @@ func _on_controller_event_received(event: Variant) -> void:
 				sound_data.id = sound.id
 				sound_data.name = sound.name
 				sound_data.path = sound.path
+				sound_data.hotkey = sound.hotkey if sound.hotkey else ""
 				sound_data.is_valid = sound.is_valid
 				sound_data.created_at = sound.created_at
 
@@ -44,6 +45,7 @@ func _on_controller_event_received(event: Variant) -> void:
 				sound_data.id = event.sound.id
 				sound_data.name = event.sound.name
 				sound_data.path = event.sound.path
+				sound_data.hotkey = event.sound.hotkey if event.sound.hotkey else ""
 				sound_data.is_valid = event.sound.is_valid
 				sound_data.created_at = event.sound.created_at
 
@@ -55,6 +57,7 @@ func _on_controller_event_received(event: Variant) -> void:
 			sound_data.id = event.sound.id
 			sound_data.name = event.sound.name
 			sound_data.path = event.sound.path
+			sound_data.hotkey = event.sound.hotkey if event.sound.hotkey else ""
 			sound_data.is_valid = event.sound.is_valid
 			sound_data.created_at = event.sound.created_at
 

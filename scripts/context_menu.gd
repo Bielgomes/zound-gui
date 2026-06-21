@@ -25,9 +25,11 @@ func _on_id_pressed(id: int) -> void:
 	if sound_data:
 		match id:
 			0:
-				%Modal.open(sound_data)
+				%UpdateSoundModal.open(sound_data)
 			1:
 				controller.send_event(JSON.stringify({
 					"type": Constants.OutgoingEvent["SOUND_REMOVE"],
 					"soundId": sound_data.id
 				}))
+			3:
+				%UpdateHotkeyModal.open(sound_data)
