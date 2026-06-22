@@ -2,13 +2,13 @@
 
 ![App](./images/app.png)
 
-[Zound-GUI](https://github.com/Bielgomes/zound-gui) is a graphical user interface (GUI) for [Zound](https://github.com/Bielgomes/zound).
-
 ![Issues](https://img.shields.io/github/issues/bielgomes/zound-gui?style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/bielgomes/zound-gui?style=for-the-badge)
 [![License](https://img.shields.io/github/license/bielgomes/zound-gui?style=for-the-badge)](LICENSE)
 
 ![Linux-support](https://img.shields.io/badge/linux-not%20supported-rrr?style=flat)
+
+[Zound-GUI](https://github.com/Bielgomes/zound-gui) is a graphical user interface (GUI) for [Zound](https://github.com/Bielgomes/zound).
 
 > [!WARNING]
 > *To developers*: This version of Zound-GUI requires [Zound v1.1.0](https://github.com/Bielgomes/zound) to work.
