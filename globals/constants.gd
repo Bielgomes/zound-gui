@@ -13,7 +13,6 @@ var OutgoingEvent = {
 }
 
 enum LoadingEvents {
-	Setup,
 	Start,
 	FetchInitialInformation
 }

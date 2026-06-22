@@ -19,8 +19,6 @@ func _on_ui_loading_done() -> void:
 
 func _on_controller_loading_progress(event: Variant) -> void:
 	match event:
-		Constants.LoadingEvents.Setup:
-			label.text = "Setting up the server"
 		Constants.LoadingEvents.Start:
 			label.text = "Establishing a connection"
 		Constants.LoadingEvents.FetchInitialInformation:
